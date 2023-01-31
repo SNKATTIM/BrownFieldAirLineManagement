@@ -1,0 +1,139 @@
+
+<form (submit)="getflightdata(flightform.value)" #flightform="ngForm">
+    <div class="form-group">
+      <label >Origin</label>
+      <select [(ngModel)]= "flightmodel.origin" name ="origin" class="form-control">
+        <option value="BANG-Banglore">BANG-Banglore</option>
+        <option value="CHN-Chennai">CHN-Chennai</option>
+        <option value="MUM-Mumbai">MUM-Mumbai</option>
+        <option value="MYS-Mysore">MYS-Mysore</option>
+        <option value="DLH-Delhi">DLH-Delhi</option>
+      </select>
+      
+     <!-- <input [(ngModel)]= "flightmodel.origin" name="origin" class="form-control"  > -->
+      
+    </div>
+    <div class="form-group">
+      <label >Destination</label>
+      <select [(ngModel)]= "flightmodel.destination" name ="destination" class="form-control">
+        <option value="BANG-Banglore">BANG-Banglore</option>
+        <option value="CHN-Chennai">CHN-Chennai</option>
+        <option value="MUM-Mumbai">MUM-Mumbai</option>
+        <option value="MYS-Mysore">MYS-Mysore</option>
+        <option value="DLH-Delhi">DLH-Delhi</option>
+      </select>
+      <!--<input [(ngModel)]= "flightmodel.destination" name="destination" class="form-control" >-->
+    </div>
+    <div class="form-group">
+        <label >flightdate</label>
+        <input  [(ngModel)]= "flightmodel.flightdate" name="flightdate" class="form-control"   >
+      </div>
+      <button type="submit" class="btn btn-primary mt-2" >submit</button>
+    &nbsp;
+  </form>
+
+  &nbsp;
+
+
+<br>
+ 
+
+
+ 
+   
+    <div *ngIf="flight.length!=0" class="panel-body">
+      <h2>Flight Details</h2>
+      <table class="table table-striped">
+       
+        <thead>
+          <tr>
+            <th>FlightNumber</th>
+            <th>FlightName</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>FlightDate</th>
+            <th>FlightTime</th>
+            <th>Fare</th>
+            <th>Avaiable seats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div *ngIf="flight.flightnumber!=0"></div>
+
+          <tr *ngFor="let flights of flight ">
+            <td>{{flights.flightNumber}}</td>
+            <td>{{flights.flight_Name}}</td>
+            <td>{{flights.origin}}</td>
+            <td>{{flights.destination}}</td>
+           
+            <td>{{flights.flightdate}}</td>
+            <td>{{flights.flight_time}}</td>
+            <td>{{flights.fares['fare']}}</td>
+            <td>{{flights.inventory['count']}}</td>
+          
+
+            <button (click)="onclick(flights.flightNumber)" type="button"  >Book</button>
+            <!--<button routerLink="/booking">book</button>-->
+           
+            
+          </tr>
+          
+        </tbody>
+
+
+      </table>
+    </div>
+
+    <div *ngIf="flightnew.length!=0">
+    <table class="table table-bordered">
+      <tr>
+         <th>flightnumber</th>
+         <td>{{flightnew.flightNumber}}</td>
+         </tr>
+         <tr>
+          <th>flightname</th>
+          <td>{{flightnew.flight_Name}}</td>
+        </tr>
+        <tr>
+          <th>origin</th>
+          <td>{{flightnew.origin}}</td>
+        </tr>
+        <tr>
+          <th>destination</th>
+          <td>{{flightnew.destination}}</td>
+        </tr>
+        <tr> 
+          <th>flightdate</th>
+           <td>{{flightnew.flightdate}}</td>
+          </tr>
+          <th>Available Seats</th>
+          <td>{{flightnew.inventory['count']}}</td>
+          <tr> 
+            <th>fare</th>
+             <td>{{flightnew.fares['fare']}}</td>
+            </tr>
+          <tr>
+             <th>flighttime</th>
+             <td>{{flightnew.flight_time}}</td>
+  
+             <button   type="submit" class="btn btn-primary mt-2" routerLink="/booking">Book</button>
+            </tr>
+      </table>
+      </div>
+  
+  
+  
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+    

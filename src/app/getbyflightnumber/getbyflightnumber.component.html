@@ -1,0 +1,40 @@
+
+<h6 class="text-danger" *ngIf="message!=null">{{message | json}}</h6>
+<h4>Enter Bookingid</h4>
+<form (submit)="getbythebookingid(myform.value)" #myform="ngForm">
+<div  class="form-group">
+   <!-- <h5>{{eForm.value | json}}</h5>-->
+    <input type="number" name="bookingid"  ngModel class="form-control" required>
+
+</div>
+<button type="submit" class="btn btn-primary mt-2">Get Details</button> &nbsp;
+<button type="reset" class="btn btn-danger mt-2"routerLink="/home">Cancel</button>
+
+</form>
+<hr/>
+
+
+<div *ngIf="books.length!=0">
+<h4>Bookingid:{{books.bookId}}</h4>
+<h4>Flightnumber:{{books.flightNumber}}</h4>
+<h4>Origin:{{books.origin}}</h4>
+<h4>Destination:{{books.destination}}</h4>
+<h4>Flightdate:{{books.flightDate}}</h4>
+<h4>Bookingdate:{{books.bookingDate}}</h4>
+<h4>Bookingid:{{books.bookId}}</h4>
+<h4>Fare:{{books.fare}}</h4>
+<h4>Status:{{books.status}}</h4>
+<div *ngFor="let i of books.passenger">
+   
+<!--<h4>Passenger:{{books.passenger[i]}}</h4>-->
+<h4>firstname:{{i.firstname}}</h4>
+</div>
+
+<button (click)="deletebyid(books)"  class="btn btn-danger mt-2" >Cancel Booking</button> &nbsp;
+</div>
+
+
+
+ 
+
+

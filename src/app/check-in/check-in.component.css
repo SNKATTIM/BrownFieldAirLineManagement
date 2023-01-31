@@ -1,0 +1,14 @@
+.container {
+    display: block;
+    border: 2px black;
+    border-radius: 4px;
+    box-sizing: border-box 1px black;
+  } 
+
+  .fles {
+  
+   
+    display: flex;
+    justify-content:initial;
+    align-items: center;
+    }

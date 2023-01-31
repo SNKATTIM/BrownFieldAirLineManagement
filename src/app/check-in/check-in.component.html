@@ -1,0 +1,19 @@
+<h6 class="text-danger" *ngIf="msg!=null">{{msg|json}}</h6>
+<form  #checkinform="ngForm">
+    <div > 
+        <label for="name">Enter flightdate</label>
+        <input [(ngModel)]="checkin.flightdate" type="text" class="form-control" name="flightdate">
+        
+        <small>filed required</small>
+      </div>
+   
+    <div >
+       <label for="name"> Enter BookingId </label>
+        <input type="number" [(ngModel)]="checkin.bookingid" class="form-control" name="bookingid">
+    </div>
+
+    <div class="fles">
+    <button  (click)="postcheck(checkin)" type="submit" class="btn btn-primary mt-2" routerLink="/home">submit</button> &nbsp;
+    </div>
+    <!--<button (click)="postcheck(checkin)"  >Submit</button>-->
+</form>

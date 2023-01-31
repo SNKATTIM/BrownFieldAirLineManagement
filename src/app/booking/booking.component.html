@@ -1,0 +1,41 @@
+<h3> Passenger Details</h3>
+
+<div class ="col-md-6 offset-md-3">
+   <form (submit)="getdata(bookform.value)" #bookform="ngForm">
+    <div class="form-group" >
+      <label for="name">flightnumber</label>
+       <input [(ngModel)]="book.flightNumber" type="number" class="form-control" name="flightNumber" value="flightt.flightNumber">
+      </div>
+      <div class="form-group">
+        <label for="name">origin</label>
+        <input [(ngModel)]="book.origin" type="text" class="form-control" name="origin" >
+      </div>
+      <div class="form-group">
+        <label for="name">destination</label>
+        <input [(ngModel)]="book.destination" type="text" class="form-control" name="destination" >
+      </div>
+      <div class="form-group">
+        <label for="name">flightdate</label>
+        <input [(ngModel)]="book.flightDate" type="text" class="form-control" name="flightDate" >
+      </div>
+     
+      <!--<div *ngFor="let f of book.passengers; let i = index"></div>-->
+      <div class="form-group"  >
+        <label for="name">firstname</label>
+        <input [(ngModel)]="passenger.firstname" type="text" class="form-control" name="firstname" >
+      </div>
+      <div class="form-group">
+        <label for="name">lastname</label>
+        <input [(ngModel)]="passenger.lastname" type="text" class="form-control" name="passengers['lastname']" >
+      </div>
+      <div class="form-group">
+        <label for="name">gender</label>
+        <input [(ngModel)]="passenger.gender" type="text" class="form-control" name="passengers['gender]" >
+      </div>
+      
+      
+      <button type="submit" class="btn btn-primary mt-2">submit</button>
+      
+      <!----<button (onclick)="getdata(bookform.value)" type="submit" class="btn btn-primary mt-2">submit</button>-->
+ 
+   
